@@ -18,7 +18,7 @@ You can download the pre-train model in ([Google Drive](https://hub.fastgit.org/
 You can download the downstream dataset from [huggingface/datasets](https://github.com/huggingface/datasets) or find download code in SentiELE_fine_tunning_SA.py
 
 ### Finetunning  
-We show the example of fine-tuning SentiLARE on SST as follows:
+We show the example of fine-tuning SentiLARE on IMDB as follows:
 ```bash
 python -m torch.distributed.launch 
 				--nproc_per_node=2 
