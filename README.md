@@ -91,7 +91,7 @@ python -m torch.distributed.launch
 	--max_len=128
 	--save_model=./word_sen_model_iter_1/ 
 ```
-We should iteratively run "ANN Index Build" and "Train" alternately.
+We should iteratively run "ANN Index Build" and "Train" alternately and change the save_model name.
 
 
 ## Thanks
