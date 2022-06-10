@@ -23,7 +23,7 @@ torch.manual_seed(random_seed)
 parser = argparse.ArgumentParser(description='Pre training model configuration')
 parser.add_argument('--model', default='electra',help='pre train model type')
 parser.add_argument('--model_size', default='Small',help='pre train model size')
-# dataset ：【imdb、yelp2、sst2、sst5、yelp5、mr、custom、】（custom Custom data file path）
+# dataset ：【imdb、yelp2、sst5、yelp5、mr、custom、】（custom Custom data file path）
 # The custom dataset must contain (text key, label key), and must contain the train and valid files
 parser.add_argument('--dataset', default='custom',help='pre train dataset')
 parser.add_argument('--inference', default="valid",help='Choose whether to use a test set or a validation set')
@@ -283,27 +283,6 @@ if __name__ == "__main__":
             print("format " + args.dataset + " dataset....")
             dataset = dataset.map(encode, batched=True)
             dataset = dataset.map(lambda examples: {'labels': examples['label']}, batched=True)
-            dataset.set_format(type='torch', columns=['input_ids', 'token_type_ids', 'attention_mask', 'labels'])
-
-        elif args.dataset == 'sst':
-            print("load sst dataset...")
-            def encode(examples):
-                return tokenizer(examples['sentence'], truncation=True, padding='max_length', max_length=max_length)
-
-            if os.path.exists(dataset_path) == False:
-                dataset = datasets.load_dataset('sst', cache_dir='./datasets')
-                dataset.save_to_disk(dataset_path)
-            else:
-                dataset = datasets.load_from_disk(dataset_path)
-
-            def score2label(example):
-                if example['label'] >= 0.5:
-                    example['labels'] = int(1)
-                else:
-                    example['labels'] = int(0)
-                return example
-            dataset = dataset.map(score2label)
-            dataset = dataset.map(encode, batched=True)
             dataset.set_format(type='torch', columns=['input_ids', 'token_type_ids', 'attention_mask', 'labels'])
 
         elif args.dataset == 'yelp2':
