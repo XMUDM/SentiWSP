@@ -18,22 +18,27 @@ You can download the pre-train model in ([Google Drive](https://hub.fastgit.org/
 You can download the downstream dataset from [huggingface/datasets](https://github.com/huggingface/datasets) or find download code in SentiELE_fine_tunning_SA.py
 
 ### Finetunning  
-We show the example of fine-tuning SentiLARE on IMDB as follows:
+We show the example of fine-tuning SentiELE on sentence-level sentiment classification IMDB as follows:
 ```bash
-python -m torch.distributed.launch 
-				--nproc_per_node=2 
-				--master_port=9314 
-				SentiELE_fine_tunning_SA.py
-				--dataset=imdb 
-				--gpu_num=2 
-				--loadmodel=True 
-				--loadmodelpath=SentiELE 
-				--batch_size=8 
-				--max_epoch=5 
-				--model_size=large 
-				--num_class=2
+python  SentiELE_fine_tunning_SA.py
+	--dataset=imdb 
+	--gpu_num=1 
+	--loadmodel=True 
+	--loadmodelpath=SentiELE 
+	--batch_size=8 
+	--max_epoch=5 
+	--model_size=large 
+	--num_class=2
 ```
-
+the example of fine-tuning SentiELE on aspect-level sentiment analysis Lap14 as follows:
+```bash
+python  SentiELE_fine_tunning_ASBA.py
+	--dataset=laptop 
+	--model_name=SentiELE 
+	--batch_size=32
+	--max_epoch=10 
+	--max_len=128 
+```
 ## Pre-training
 If you want to conduct pre-training by yourself instead of directly using the checkpoint we provide, this part may help you pre-process the pre-training dataset and run the pre-training scripts.
 
