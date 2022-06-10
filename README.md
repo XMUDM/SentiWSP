@@ -2,13 +2,13 @@
 ## For paper: Multi-granularity Textual Pre-training for Sentiment Classification
 
 ## Dependencies
-python>=3.6
-datasets>=1.7.0
-transformers==4.9.2 (Huggingface)
-fastcore>=1.0.20
-fastai<=2.1.10
-wandb>=0.10.4
-hugdatafast>=1.0.0
+- python>=3.6
+- datasets>=1.7.0
+- transformers==4.9.2 (Huggingface)
+- fastcore>=1.0.20
+- fastai<=2.1.10
+- wandb>=0.10.4
+- hugdatafast>=1.0.0
 
 ## Quick Start for Fine-tuning
 
