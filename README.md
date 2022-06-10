@@ -1,6 +1,6 @@
 # SentiELE
 ## For paper: Multi-granularity Textual Pre-training for Sentiment Classification
-author：Shuai Fan, Zhenghao Lin, Chen Lin, Yeyun Gong, Haonan Li
+Authors：Shuai Fan, Zhenghao Lin, Chen Lin, Yeyun Gong, Haonan Li
 ## Dependencies
 - python>=3.6
 - datasets>=1.7.0
