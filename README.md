@@ -3,12 +3,13 @@
 Authors：Shuai Fan, Zhenghao Lin, Chen Lin, Yeyun Gong, Haonan Li
 ## Dependencies
 - python>=3.6
-- datasets>=1.7.0
-- transformers==4.9.2 (Huggingface)
-- fastcore>=1.0.20
-- fastai<=2.1.10
-- wandb>=0.10.4
+- torch>=1.7.1
+- datasets>=1.12.1
+- transformers>=4.9.2 (Huggingface)
+- fastcore>=1.3.29
+- fastai<=2.2.0
 - hugdatafast>=1.0.0
+- huggingface-hub>=0.0.19
 
 ## Quick Start for Fine-tunning
 
