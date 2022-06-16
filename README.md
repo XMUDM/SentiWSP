@@ -1,6 +1,5 @@
 # SentiWSP
 ## For paper: Combining Word and Sentence Level Pre-training for Sentiment Classification
-
 ## Dependencies
 - python>=3.6
 - torch>=1.7.1
