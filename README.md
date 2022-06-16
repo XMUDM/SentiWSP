@@ -15,12 +15,12 @@
 ### Download model and downstream dataset
 Our experiments contain sentence-level sentiment classification (e.g. SST-5 / MR / IMDB / Yelp-2 / Yelp-5) and aspect-level sentiment analysis (e.g. Lap14 / Res14). 
 You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)). 
-You can download the downstream datasets from [huggingface/datasets](https://github.com/huggingface/datasets) and find download code in SentiELE_fine_tunning_SA.py. Meanwhile, we also put some downstream datasets in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)).
+You can download the downstream datasets from [huggingface/datasets](https://github.com/huggingface/datasets) and find download code in SentiWSP_fine_tunning_SA.py. Meanwhile, we also put some downstream datasets in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)).
 
 ### Fine-tunning  
 We show the example of fine-tuning SentiELE on sentence-level sentiment classification IMDB as follows:
 ```bash
-python  SentiELE_fine_tunning_SA.py
+python  SentiWSP_fine_tunning_SA.py
 	--dataset=imdb 
 	--gpu_num=1 
 	--loadmodel=True 
@@ -32,7 +32,7 @@ python  SentiELE_fine_tunning_SA.py
 ```
 the example of fine-tuning SentiELE on aspect-level sentiment analysis Lap14 as follows:
 ```bash
-python  SentiELE_fine_tunning_ASBA.py
+python  SentiWSP_fine_tunning_ASBA.py
 	--dataset=laptop 
 	--model_name=SentiELE 
 	--batch_size=32
@@ -48,7 +48,7 @@ If you want to conduct pre-training by yourself instead of directly using the ch
 python -m torch.distributed.launch 
 	--nproc_per_node=4 
 	--master_port=9999 
-	SentiELE_Pretrain_Word.py 
+	SentiWSP_Pretrain_Word.py 
 	--dataset=wiki 
 	--size=large 
 	--gpu_num=4 
@@ -63,7 +63,7 @@ python -m torch.distributed.launch
 python -m torch.distributed.launch 
 	--nproc_per_node=4 
 	--master_port=9999
-	SentiELE_Pretrain_Warmup_inbatch.py
+	SentiWSP_Pretrain_Warmup_inbatch.py
 	--load_model=word5_large_model
 	--gpu_num=4
 	--batch_size=32
@@ -73,7 +73,7 @@ python -m torch.distributed.launch
 2. ANCE
 - ANN Index Build:
 ```bash
-python SentiELE_Pretrain_ANCE_GEN.py
+python SentiWSP_Pretrain_ANCE_GEN.py
 	--gpu_num=1 
 	--sentimask_prob=0.7 
 	--max_length=128 
@@ -84,7 +84,7 @@ python SentiELE_Pretrain_ANCE_GEN.py
 python -m torch.distributed.launch 
 	--nproc_per_node=4 
 	--master_port=9999
-	SentiELE_Pretrain_ANCE_TRAIN.py
+	SentiWSP_Pretrain_ANCE_TRAIN.py
 	--load_model=word_sen_model
 	--gpu_num=4
 	--batch_size=32
