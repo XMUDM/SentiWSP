@@ -1,6 +1,6 @@
 # SentiWSP
 ## For paper: Combining Word and Sentence Level Pre-training for Sentiment Classification
-Authors：Shuai Fan, Zhenghao Lin, Chen Lin, Yeyun Gong, Haonan Li
+Authors：Shuai Fan, Zhenghao Lin, Haonan Li, Chen Lin*, Jinsong Su, Yeyun Gong, Hang Zhang
 ## Dependencies
 - python>=3.6
 - torch>=1.7.1
