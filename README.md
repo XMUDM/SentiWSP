@@ -24,7 +24,7 @@ python  SentiWSP_fine_tunning_SA.py
 	--dataset=imdb 
 	--gpu_num=1 
 	--loadmodel=True 
-	--loadmodelpath=SentiELE 
+	--loadmodelpath=SentiWSP 
 	--batch_size=8 
 	--max_epoch=5 
 	--model_size=large 
@@ -34,7 +34,7 @@ the example of fine-tuning SentiELE on aspect-level sentiment analysis Lap14 as 
 ```bash
 python  SentiWSP_fine_tunning_ASBA.py
 	--dataset=laptop 
-	--model_name=SentiELE 
+	--model_name=SentiWSP
 	--batch_size=32
 	--max_epoch=10 
 	--max_len=128 
