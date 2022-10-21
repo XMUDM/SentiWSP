@@ -20,7 +20,7 @@ You can download the pre-train model in ([Google Drive](https://drive.google.com
 You can download the downstream datasets from [huggingface/datasets](https://github.com/huggingface/datasets) and find download code in SentiWSP_fine_tunning_SA.py. Meanwhile, we also put some downstream datasets in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)).
 
 ### Fine-tunning  
-We show the example of fine-tuning SentiELE on sentence-level sentiment classification IMDB as follows:
+We show the example of fine-tuning SentiWSP on sentence-level sentiment classification IMDB as follows:
 ```bash
 python  SentiWSP_fine_tunning_SA.py
 	--dataset=imdb 
@@ -32,7 +32,7 @@ python  SentiWSP_fine_tunning_SA.py
 	--model_size=large 
 	--num_class=2
 ```
-the example of fine-tuning SentiELE on aspect-level sentiment analysis Lap14 as follows:
+the example of fine-tuning SentiWSP on aspect-level sentiment analysis Lap14 as follows:
 ```bash
 python  SentiWSP_fine_tunning_ASBA.py
 	--dataset=laptop 
