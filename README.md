@@ -15,8 +15,9 @@ Our experiments contain sentence-level sentiment classification (e.g. SST-5 / MR
 ### Load our model
 You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)), and load our model by :
 ```python
-from transformers import ElectraForPreTraining, ElectraTokenizer
+from transformers import ElectraForSequenceClassification, ElectraTokenizer
 import torch
+
 model = ElectraForSequenceClassification.from_pretrained(save_path)
 tokenizer = ElectraTokenizer.from_pretrained(save_path)
 ```
