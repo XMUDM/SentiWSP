@@ -11,12 +11,19 @@
 - huggingface-hub>=0.0.19
 
 ## Quick Start for Fine-tunning
+Our experiments contain sentence-level sentiment classification (e.g. SST-5 / MR / IMDB / Yelp-2 / Yelp-5) and aspect-level sentiment analysis (e.g. Lap14 / Res14). 
+### Load model
+You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)). 
+or load our model in huggingface ([https://huggingface.co/shuaifan/SentiWSP](https://huggingface.co/shuaifan/SentiWSP))
+```python
+from transformers import ElectraForPreTraining, ElectraTokenizerFast
+import torch
+
+model = ElectraForPreTraining.from_pretrained("shuaifan/SentiWSP")
+tokenizer = ElectraTokenizerFast.from_pretrained("shuaifan/SentiWSP")
+```
 
 ### Download downstream dataset
-Our experiments contain sentence-level sentiment classification (e.g. SST-5 / MR / IMDB / Yelp-2 / Yelp-5) and aspect-level sentiment analysis (e.g. Lap14 / Res14). 
-
-You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)). 
-
 You can download the downstream datasets from [huggingface/datasets](https://github.com/huggingface/datasets) and find download code in SentiWSP_fine_tunning_SA.py. Meanwhile, we also put some downstream datasets in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)).
 
 ### Fine-tunning  
