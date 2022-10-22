@@ -13,14 +13,17 @@
 ## Quick Start for Fine-tunning
 Our experiments contain sentence-level sentiment classification (e.g. SST-5 / MR / IMDB / Yelp-2 / Yelp-5) and aspect-level sentiment analysis (e.g. Lap14 / Res14). 
 ### Load model
-You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)). 
-or load our model in huggingface ([https://huggingface.co/shuaifan/SentiWSP](https://huggingface.co/shuaifan/SentiWSP))
+You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)), and load our model by :
 ```python
-from transformers import ElectraForPreTraining, ElectraTokenizerFast
+from transformers import ElectraForPreTraining, ElectraTokenizer
 import torch
-
-model = ElectraForPreTraining.from_pretrained("shuaifan/SentiWSP")
-tokenizer = ElectraTokenizerFast.from_pretrained("shuaifan/SentiWSP")
+model = ElectraForSequenceClassification.from_pretrained(save_path)
+tokenizer = ElectraTokenizer.from_pretrained(save_path)
+```
+You can also load our model in huggingface ([https://huggingface.co/shuaifan/SentiWSP](https://huggingface.co/shuaifan/SentiWSP)):
+```python
+model = ElectraForSequenceClassification.form_pretrained("shuaifan/SentiWSP")
+tokenizer = ElectraTokenizer.from_pretrained("shuaifan/SentiWSP")
 ```
 
 ### Download downstream dataset
