@@ -1,6 +1,6 @@
 # SentiWSP
 ## For paper: Sentiment-Aware Word and Sentence Level Pre-training for Sentiment Analysis
-Shuai Fan, Chen Lin, Haonan Li, Zhenghao Lin, Hang Zhang, Yeyun Gong, Jian Guo, Nan Duan
+Shuai Fan, Chen Lin, Haonan Li, Zhenghao Lin, Jinsong Su, Hang Zhang, Yeyun Gong, Jian Guo, Nan Duan
 
 ## Dependencies
 - python>=3.6
