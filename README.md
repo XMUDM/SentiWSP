@@ -14,7 +14,7 @@ Shuai Fan, Chen Lin, Haonan Li, Zhenghao Lin, Jinsong Su, Hang Zhang, Yeyun Gong
 
 ## Quick Start for Fine-tunning
 Our experiments contain sentence-level sentiment classification (e.g. SST-5 / MR / IMDB / Yelp-2 / Yelp-5) and aspect-level sentiment analysis (e.g. Lap14 / Res14). 
-### Load our model
+### Load our model(large)
 You can download the pre-train model in ([Google Drive](https://drive.google.com/drive/folders/1Azx30v2TdenuziOZB_ob3UfniO0yoLqa?usp=sharing)), and load our model by :
 ```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -30,6 +30,15 @@ import torch
 
 tokenizer = AutoTokenizer.from_pretrained("shuaifan/SentiWSP")
 model = AutoModelForSequenceClassification.from_pretrained("shuaifan/SentiWSP")
+```
+### Load our model(base)
+You can also load our model in huggingface ([https://huggingface.co/shuaifan/SentiWSP-base](https://huggingface.co/shuaifan/SentiWSP-base)):
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import torch
+
+tokenizer = AutoTokenizer.from_pretrained("shuaifan/SentiWSP-base")
+model = AutoModelForSequenceClassification.from_pretrained("shuaifan/SentiWSP-base")
 ```
 
 ### Download downstream dataset
@@ -57,6 +66,12 @@ python  SentiWSP_fine_tunning_ASBA.py
 	--max_epoch=10 
 	--max_len=128 
 ```
+For SentiWSP and SentiWSP-base, We fine-tune 3-5 epochs for sentence-level sentiment classification tasks and 7-10 epochs for aspect-level sentiment classification tasks. We use different batch_size for different model size:
+| model size | batch_size | max_sentence_length |
+| ---------- | ---------- | ------------------- |
+| base       | 32         | 512                 |
+| large      | 8          | 512                 |
+
 ## Pre-training
 If you want to conduct pre-training by yourself instead of directly using the checkpoint we provide, this part may help you pre-process the pre-training dataset and run the pre-training scripts.
 
