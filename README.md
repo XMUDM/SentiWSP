@@ -32,7 +32,7 @@ tokenizer = AutoTokenizer.from_pretrained("shuaifan/SentiWSP")
 model = AutoModelForSequenceClassification.from_pretrained("shuaifan/SentiWSP")
 ```
 ### Load our model(base)
-You can also load our model in huggingface ([https://huggingface.co/shuaifan/SentiWSP-base](https://huggingface.co/shuaifan/SentiWSP-base)):
+You can also load our base model in huggingface ([https://huggingface.co/shuaifan/SentiWSP-base](https://huggingface.co/shuaifan/SentiWSP-base)):
 ```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
