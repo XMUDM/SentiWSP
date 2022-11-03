@@ -66,7 +66,7 @@ python  SentiWSP_fine_tunning_ASBA.py
 	--max_epoch=10 
 	--max_len=128 
 ```
-For SentiWSP and SentiWSP-base, We fine-tune 3-5 epochs for sentence-level sentiment classification tasks and 7-10 epochs for aspect-level sentiment classification tasks. We use different batch_size for different model size:
+For SentiWSP and SentiWSP-base, We fine-tune 3-5 epochs for sentence-level sentiment classification tasks and 7-10 epochs for aspect-level sentiment classification tasks. We use learning rate=2e-5 for SA tasks and 1e-5 for ASBA tasks. We use different batch_size for different model size:
 | model size | batch_size | max_sentence_length |
 | ---------- | ---------- | ------------------- |
 | base       | 32         | 512                 |
