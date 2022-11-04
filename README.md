@@ -73,7 +73,7 @@ For SentiWSP and SentiWSP-base, We fine-tune 3-5 epochs for sentence-level senti
 | large      | 8          | 512                 |
 
 ## Pre-training
-If you want to conduct pre-training by yourself instead of directly using the checkpoint we provide, this part may help you pre-process the pre-training dataset and run the pre-training scripts.
+If you want to conduct pre-training by yourself instead of directly using the checkpoint we provide, this part may help you pre-process the pre-training dataset and run the pre-training scripts. You should train the model on some NVIDIA Tesla A100 GPUs.
 
 ### Word-level pre-training
 
