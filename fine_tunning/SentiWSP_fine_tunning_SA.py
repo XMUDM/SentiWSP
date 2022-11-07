@@ -219,10 +219,8 @@ if __name__ == "__main__":
     print("classify class is "+str(args.num_class)+" and use load model")
     model_path = os.path.join(args.pretrain_model, args.model)
     save_path = loadmodelpath
-    
     tokenizer = AutoTokenizer.from_pretrained(save_path)
     model = AutoModelForSequenceClassification.from_pretrained(save_path, num_labels=args.num_class)
-
     #data
     if args.fewshot or args.zeroshot:
         #few shot and zero shot finetune
