@@ -9,7 +9,7 @@ from torch.utils.data import TensorDataset, DataLoader, RandomSampler, Sequentia
 from sklearn.metrics import precision_recall_curve,classification_report
 
 from transformers import ElectraTokenizer, ElectraForSequenceClassification, ElectraConfig, get_linear_schedule_with_warmup,ElectraTokenizerFast
-
+from transformers import AutoTokenizer,  AutoModelForSequenceClassification
 import absa_data_utils as data_utils
 from transformers import WEIGHTS_NAME, CONFIG_NAME
 
@@ -141,7 +141,8 @@ if __name__ == "__main__":
     train_examples = processor.get_train_examples(data_path)
     print("load dataset:",args.dataset)
     # ABSA standard data input format conversion
-    tokenizer = ElectraTokenizer.from_pretrained(args.tokenizer_path)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_path)
+    
     train_features = data_utils.convert_examples_to_features(
         train_examples, label_list, args.max_len, tokenizer)
     
@@ -158,7 +159,7 @@ if __name__ == "__main__":
     
     # load model
     model_path = args.model_path+args.model_name
-    model = ElectraForSequenceClassification.from_pretrained(model_path,num_labels = len(label_list))
+    model = AutoModelForSequenceClassification.from_pretrained(save_path, num_labels=len(label_list))
     model.to(device)
     print("load model:", args.model_name)
 
