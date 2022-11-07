@@ -2,6 +2,11 @@
 ## For paper: Sentiment-Aware Word and Sentence Level Pre-training for Sentiment Analysis
 Shuai Fan, Chen Lin, Haonan Li, Zhenghao Lin, Jinsong Su, Hang Zhang, Yeyun Gong, Jian Guo, Nan Duan
 
+Xiamen University, The University of Melbourne, IDEA Research, Microsoft Research Asia
+
+paper link: ([https://arxiv.org/abs/2210.09803](https://arxiv.org/abs/2210.09803))
+
+
 ## Dependencies
 - python>=3.6
 - torch>=1.7.1
